@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clicks</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Contador de Clicks</h1>
+      <div class="container">
+        <p id="number">0</p>
+        <div>
+          <button class="btn btn-red" id="btn-reset">Reset</button>
+          <button class="btn btn-green" id="btn-click">Click</button>
+        </div>
+      </div>
+      <div style="margin-top: 1.5rem">
+        <b>CRUD de tareas:</b>
+        <a href="./tareas.html">Tareas</a>
+      </div>
+    </main>
+    <script>
+      const d = document;
+
+      d.addEventListener("DOMContentLoaded", (e) => {
+        let num = 0;
+        d.addEventListener("click", (e) => {
+          if (e.target.matches("#btn-click")) {
+            num += 1;
+            d.getElementById("number").textContent = num;
+          }
+
+          if (e.target.matches("#btn-reset")) {
+            num = 0;
+            d.getElementById("number").textContent = num;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
